@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Splurty</title>
+  <title>My Splurty</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
+		
 		<div class="col-xs-3">
+			<%= link_to root_path, :class => 'logo' do %>
 			<div class="circle">
 			  <br />
 			  Learn
@@ -17,14 +19,16 @@
 			  <br />
 			  now
 			</div>
+			<% end %>
 		</div>
 		<div class="col-xs-4 slogan">
 			Splurting out unsolicited advice about entrepreneurship since 2014.
 		</div>
 		<div class="col-xs-5 links">
-			<%= link_to 'Contribute', '#' %>
+			<%= link_to 'Contribute', new_quote_path %>
 			<%= link_to 'About', '#' %>
-		</div>		
+		</div>
+
 	</header>
 	<hr />
 	<br class="clear" />
@@ -36,7 +40,7 @@
 	<div class="footer">
     <div class="container">
        <div class="col-xs-6">
-        <%= link_to "This isn't enough, I need more", "#", :class => 'next-quote' %>
+        <%= link_to "This isn't enough, I need more", root_path, :class => 'next-quote' %>
       	</div>
       	<div class="col-xs-6 footer-blurb">
         Bootstrap's grid system is nice.<br />
