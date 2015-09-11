@@ -2,11 +2,6 @@ class QuotesController < ApplicationController
 	def index
 		@quote = Quote.order("RANDOM()").first
 	end
-	
-	# creates row in db for new quote
-	def new
-		@quote = Quote.new
-	end
 
 	def create
 		@quote = Quote.create(quote_params)
